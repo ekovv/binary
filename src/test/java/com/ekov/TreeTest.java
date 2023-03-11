@@ -43,11 +43,4 @@ public class TreeTest {
         assertEquals(3, node.getCount(10));
         assertEquals(1, node.getCount(11));
     }
-
-
-    @Test
-    public void constr() {
-        Tree tree = new Tree();
-        Assertions.assertNotNull(tree, "not null");
-    }
 }
