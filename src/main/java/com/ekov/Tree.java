@@ -4,18 +4,25 @@ import java.util.Objects;
 
 public class Tree {
 
-    private int value;
-    private Tree left;
-    private Tree right;
-    private Tree root;
+//    private int value;
+//    private Tree left;
+//    private Tree right;
+    private Node root;
+
+    private static class Node {
+        private int value;
+        private Node left;
+        private Node right;
+
+    }
 
     public Tree() {
         this.root = null;
     }
 
     public void insertInto(int value) {
-        Tree temp = this.root;
-        Tree newRoot = new Tree();
+        Node temp = this.root;
+        Node newRoot = new Node();
         newRoot.value = value;
         if (this.root == null) {
             this.root = newRoot;
@@ -49,8 +56,8 @@ public class Tree {
     }
 
 
-    public Tree findValue(int target) {
-        Tree head = this.root;
+    public Node findValue(int target) {
+        Node head = this.root;
         while (head.value != target) {
             head = target > head.value ? head.right : head.left;
         }
@@ -58,7 +65,7 @@ public class Tree {
     }
 
 
-    public Tree deleteElement(Tree head, int target) {
+    public Node deleteElement(Node head, int target) {
         if (head == null) return null;
         if (target < head.value) {
             head.left = deleteElement(head.left, target);
@@ -80,7 +87,7 @@ public class Tree {
     }
 
 
-    public int min(Tree head) {
+    public int min(Node head) {
         while (head.left != null) {
             head = head.left;
         }
@@ -90,7 +97,7 @@ public class Tree {
 
     public int getCount(int value) {
         int count = 0;
-        Tree head = findValue(value);
+        Node head = findValue(value);
         if (head != root) count++;
         if (head.right != null) count++;
         if (head.left != null) count++;
@@ -119,11 +126,11 @@ public class Tree {
         return value;
     }
 
-    public Tree getLeft() {
+    public Node getLeft() {
         return left;
     }
 
-    public Tree getRight() {
+    public Node getRight() {
         return right;
     }
 
