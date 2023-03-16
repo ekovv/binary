@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71c00d4c-a69a-474d-97b5-fbf67c9c2b46" name="Changes" comment="binary tree done">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ekov/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ekov/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ekov/TreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ekov/TreeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +54,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -75,11 +76,19 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.TreeTest.findValue">
-    <configuration name="TreeTest.constructorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.ekov" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.TreeTest.insertInto">
+    <configuration name="TreeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -92,7 +101,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.ekov.TreeTest.constructorTest&quot;" />
+            <option value="&quot;com.ekov.TreeTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -196,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TreeTest.insertInto" />
+        <item itemvalue="Gradle.TreeTest" />
+        <item itemvalue="Gradle.TreeTest.deleteElement" />
         <item itemvalue="Gradle.TreeTest.findValue" />
         <item itemvalue="Gradle.TreeTest.getCount" />
-        <item itemvalue="Gradle.TreeTest.deleteElement" />
-        <item itemvalue="Gradle.TreeTest.insertInto" />
-        <item itemvalue="Gradle.TreeTest.constructorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +226,13 @@
       <workItem from="1678568920010" duration="13000" />
       <workItem from="1678700496295" duration="268000" />
       <workItem from="1678705227850" duration="635000" />
-      <workItem from="1678733590052" duration="2123000" />
+      <workItem from="1678733590052" duration="8020000" />
+      <workItem from="1678787307110" duration="1821000" />
+      <workItem from="1678819301744" duration="1942000" />
+      <workItem from="1678883698413" duration="905000" />
+      <workItem from="1678899999783" duration="616000" />
+      <workItem from="1678972228160" duration="2474000" />
+      <workItem from="1678984679192" duration="595000" />
     </task>
     <task id="LOCAL-00001" summary="binary tree done">
       <created>1678496169254</created>
@@ -233,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678496927064</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="binary tree done">
+      <created>1678737628583</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678737628583</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

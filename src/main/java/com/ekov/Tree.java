@@ -3,18 +3,7 @@ package com.ekov;
 import java.util.Objects;
 
 public class Tree {
-
-//    private int value;
-//    private Tree left;
-//    private Tree right;
     private Node root;
-
-    private static class Node {
-        private int value;
-        private Node left;
-        private Node right;
-
-    }
 
     public Tree() {
         this.root = null;
@@ -22,63 +11,62 @@ public class Tree {
 
     public void insertInto(int value) {
         Node temp = this.root;
-        Node newRoot = new Node();
-        newRoot.value = value;
+        Node newRoot = new Node(value);
         if (this.root == null) {
             this.root = newRoot;
             return;
         }
         while (true) {
-            if (value == temp.value) break;
-            if (value < temp.value ) {
-                if (temp.left == null) {
-                    temp.left = newRoot;
+            if (value == temp.getValue()) break;
+            if (value < temp.getValue()) {
+                if (temp.getLeft() == null) {
+                    temp.setLeft(newRoot);
                     break;
                 }
-                temp = temp.left;
+                temp = temp.getLeft();
             }
-            if (value > temp.value) {
-                if (temp.right == null) {
-                    temp.right = newRoot;
+            if (value > temp.getValue()) {
+                if (temp.getRight() == null) {
+                    temp.setRight(newRoot);
                     break;
                 }
-                temp = temp.right;
+                temp = temp.getRight();
             }
         }
     }
-
 
     public void insertAll(int... values) {
         for (int value: values) {
             insertInto(value);
         }
-
     }
-
 
     public Node findValue(int target) {
         Node head = this.root;
-        while (head.value != target) {
-            head = target > head.value ? head.right : head.left;
+        while (head.getValue() != target) {
+            head = target > head.getValue() ? head.getRight() : head.getLeft();
         }
         return head;
     }
 
+    public void deleteElement(int target) {
+        root = deleteElement(root, target);
+    }
 
     public Node deleteElement(Node head, int target) {
         if (head == null) return null;
-        if (target < head.value) {
-            head.left = deleteElement(head.left, target);
-        } else if (target > head.value) {
-            head.right = deleteElement(head.right, target);
-        } else if (head.left != null && head.right != null) {
-            head.value = min(head.right);
-            head.right = deleteElement(head.right, head.value);
+        if (target < head.getValue()) {
+            head.setLeft(deleteElement(head.getLeft(), target));
+        } else if (target > head.getValue()) {
+            head.setRight(deleteElement(head.getRight(), target));
+        } else if (head.getLeft() != null && head.getRight() != null) {
+            head.setValue(min(head.getRight()));
+            head.setRight(deleteElement(head.getRight(), head.getValue()));
         } else {
-            if (head.left != null) {
-                head = head.left;
-            } else if (head.right != null) {
-                head = head.right;
+            if (head.getLeft() != null) {
+                head = head.getLeft();
+            } else if (head.getRight() != null) {
+                head = head.getRight();
             } else {
                 head = null;
             }
@@ -86,55 +74,72 @@ public class Tree {
         return head;
     }
 
-
     public int min(Node head) {
-        while (head.left != null) {
-            head = head.left;
+        while (head.getLeft() != null) {
+            head = head.getLeft();
         }
-        return head.value;
+        return head.getValue();
     }
-
 
     public int getCount(int value) {
         int count = 0;
         Node head = findValue(value);
         if (head != root) count++;
-        if (head.right != null) count++;
-        if (head.left != null) count++;
+        if (head.getRight() != null) count++;
+        if (head.getLeft() != null) count++;
         return count;
     }
-    @Override
-    public String toString() {
-        return "Tree{" +
-                "value=" + value +
-                ", left=" + left +
-                ", right=" + right +
-                '}';
-    }
-
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Tree tree = (Tree) o;
-        return value == tree.value && Objects.equals(left, tree.left) && Objects.equals(right, tree.right);
+        return Objects.equals(root, tree.root);
     }
-
-
-    public int getValue() {
-        return value;
-    }
-
-    public Node getLeft() {
-        return left;
-    }
-
-    public Node getRight() {
-        return right;
-    }
-
-    public Tree getRoot() {
+    public Node getRoot() {
         return root;
+    }
+
+    static class Node {
+        private int value;
+        private Node left;
+        private Node right;
+
+        public Node(int value) {
+            this.value = value;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Node node = (Node) o;
+            return value == node.value && Objects.equals(left, node.left) && Objects.equals(right, node.right);
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        public void setValue(int value) {
+            this.value = value;
+        }
+
+        public Node getLeft() {
+            return left;
+        }
+
+        public void setLeft(Node left) {
+            this.left = left;
+        }
+
+        public Node getRight() {
+            return right;
+        }
+
+        public void setRight(Node right) {
+            this.right = right;
+        }
     }
 }
