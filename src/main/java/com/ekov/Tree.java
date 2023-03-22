@@ -97,6 +97,7 @@ public class Tree {
         Tree tree = (Tree) o;
         return Objects.equals(root, tree.root);
     }
+    
     public Node getRoot() {
         return root;
     }
